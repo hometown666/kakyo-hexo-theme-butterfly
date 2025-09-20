@@ -22,6 +22,14 @@ menu:
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
+  主页: / || fas fa-home
+  目录||fas fa-list:
+    归档: /archives/ || fas fa-archive
+    标签: /tags/ || fas fa-tags
+    分类: /categories/ || fas fa-folder-open
+  图库: /Gallery/ || fas fa-images
+  传送门: /link/ || fas fa-link
+  关于: /about/ || fas fa-heart
 
 # --------------------------------------
 # Code Blocks Settings
@@ -46,6 +54,9 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
+  fab fa-bilibili: https://space.bilibili.com/510983322 || Bilibili
+  fas fa-envelope: mailto:whtlalala666@163.com || Email
+  fab fa-github: https://github.com/hometown666
   # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
 
@@ -53,26 +64,26 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /media/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /media/avatar.jpg
   effect: false
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img:
+default_top_img: /media/top_img.jpg
 
 # The banner image of index page
-index_img:
+index_img: /media/bg.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
 
 # Note: tag page, not tags page
-tag_img:
+tag_img: 'linear-gradient( 135deg, #F05F57 10%, #360940 100%)'
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
@@ -99,20 +110,21 @@ cover:
   index_enable: true
   aside_enable: true
   archives_enable: true
+  position: both
   # When cover is not set, the default cover is displayed
   default_cover:
     # - xxx.jpg
 
 # Replace Broken Images
 error_img:
-  flink: /img/friend_404.gif
-  post_page: /img/404.jpg
+  flink: /media/top_img.jpg
+  post_page: /media/top_img.jpg
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
-  background: /img/error-page.png
+  background: /media/page404.gif
 
 post_meta:
   # Home Page
@@ -148,9 +160,10 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
+  loop: true
   # Customize typed.js
   # https://github.com/mattboldt/typed.js/#customization
   typed_option:
@@ -164,6 +177,28 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 欢迎来到家乡的~~世界~~天下
+    - Welcome to hometown's world.
+    - 鸡汤来咯
+    - Here comes some motivational quotes (chicken soup).
+    - 知识来自实践。
+    - Knowledge comes from experience alone.
+    - 世间无所谓天才，它仅是刻苦加勤奋。
+    - There is no such thing as genius; it is nothing but labour and diligence.
+    - 为什么家长只看分数？废话！难道他们看得懂题目？
+    - Why do parents only care about scores? Duh! Can they even understand the questions?
+    - 厉害的人太多了，我要为笨蛋争口气！
+    - There are too many talented people, I want to stand up for the dumb ones!
+    - 书籍是进步的阶梯，手机是近视的电梯。
+    - Books are the staircase to progress, while phones are the elevator to myopia.
+    - 这个月圣诞，下个月元旦，下下月完蛋。
+    - This month is Christmas, next month is New Year’s Day, and the month after next is doomed.
+    - 当你觉得自己不行的时候，走到斑马线上，你就成了一个行人。
+    - When you feel like you can’t do it, just step onto the zebra crossing and you become a pedestrian.
+    - 上学时一个人的力气如壮牛，那是因为他，拖了全班人的后腿。
+    - When you were in school, your strength was akin to that of a strong bull. This is because you were busy pulling the rest of the class along.
+    - 牛人坚持不懈叫匠人，但你坚持不懈叫犟人。
+    - A genius who persists is called a master craftsman, but if you persist stubbornly, you’re called stubborn.
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -190,6 +225,7 @@ index_post_content:
 # --------------------------------------
 
 toc:
+  enable: true
   post: true
   page: false
   number: true
@@ -207,15 +243,15 @@ post_copyright:
 
 # Sponsor/reward
 reward:
-  enable: false
+  enable: true
   text:
   QR_code:
-    # - img: /img/wechat.jpg
-    #   link:
-    #   text: wechat
-    # - img: /img/alipay.jpg
-    #   link:
-    #   text: alipay
+    - img: /media/wechat.jpg
+      link:
+      text: wechat
+    - img: /media/alipay.jpg
+      link:
+      text: alipay
 
 # Post edit
 # Easily browse and edit blog source code online.
@@ -287,11 +323,11 @@ aside:
     button:
       enable: true
       icon: fab fa-github
-      text: Follow Me
-      link: https://github.com/xxxxxx
+      text: Follow Me on GitHub
+      link: https://github.com/hometown666
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 嗯呐
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -361,7 +397,7 @@ rightside_bottom:
 
 # Conversion between Traditional and Simplified Chinese
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -416,7 +452,7 @@ anchor:
   # Click the headline to scroll and update the anchor
   click_to_scroll: false
 
-photofigcaption: false
+photofigcaption: true
 
 copy:
   enable: true
@@ -427,7 +463,7 @@ copy:
 
 # Need to install the hexo-wordcount plugin
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -451,7 +487,7 @@ busuanzi:
 math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
-  use:
+  use: mathjax
   per_page: true
   hide_scrollbar: false
 
@@ -472,8 +508,8 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
-  placeholder:
+  use: local_search
+  placeholder: '搜索文章...'
 
   # Algolia Search
   algolia_search:
@@ -482,18 +518,20 @@ search:
 
   # Local Search
   local_search:
+    enable: true
     # Preload the search data when the page loads.
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
     unescape: false
     # Enable pagination for search results
     pagination:
-      enable: false
+      enable: ture
       # Number of search results per page
       hitsPerPage: 8
     CDN:
+      local_search: /js/search/local-search.js
 
   # Docsearch
   # https://docsearch.algolia.com/
@@ -531,7 +569,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use:
+  use: valine
   # Display the comment name next to the button
   text: true
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -574,15 +612,23 @@ gitalk:
 # Valine
 # https://valine.js.org
 valine:
-  appId:
-  appKey:
-  avatar: monsterid
+  appId: iN8E28QYr19Iql1fW8E1pe4m-MdYXbMMI
+  appKey: 524G9dCeP5KxzzxZisWDBvT7
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
   serverURLs:
   bg:
   # Use Valine visitor count as the page view count
   visitor: false
   option:
+  pageSize: 10 # comment list page size
+  lang: en # i18n: zh-CN/zh-TW/en/ja
+  placeholder: Please leave your footprints # valine comment input placeholder (like: Please leave your footprints)
+  guest_info: nick,mail,link # valine comment header info (nick/mail/link)
+  recordIP: false # Record reviewer IP
+  emojiCDN: # emoji CDN
+  enableQQ: true # enable the Nickname box to automatically get QQ Nickname and QQ Avatar
+  requiredFields: nick,mail # required fields (nick/mail)
 
 # Waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
@@ -754,23 +800,23 @@ site_verification:
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
 
-# theme_color:
-#   enable: true
-#   main: "#49B1F5"
-#   paginator: "#00c4b6"
-#   button_hover: "#FF7242"
-#   text_selection: "#00c4b6"
-#   link_color: "#99a9bf"
-#   meta_color: "#858585"
-#   hr_color: "#A4D8FA"
-#   code_foreground: "#F47466"
-#   code_background: "rgba(27, 31, 35, .05)"
-#   toc_color: "#00c4b6"
-#   blockquote_padding_color: "#49b1f5"
-#   blockquote_background_color: "#49b1f5"
-#   scrollbar_color: "#49b1f5"
-#   meta_theme_color_light: "ffffff"
-#   meta_theme_color_dark: "#0d0d0d"
+theme_color:
+  enable: true
+  main: "#49B1F5"
+  paginator: "#00c4b6"
+  button_hover: "#FF7242"
+  text_selection: "#00c4b6"
+  link_color: "#99a9bf"
+  meta_color: "#858585"
+  hr_color: "#A4D8FA"
+  code_foreground: "#F47466"
+  code_background: "rgba(27, 31, 35, .05)"
+  toc_color: "#00c4b6"
+  blockquote_padding_color: "#49b1f5"
+  blockquote_background_color: "#49b1f5"
+  scrollbar_color: "#49b1f5"
+  meta_theme_color_light: "ffffff"
+  meta_theme_color_dark: "#0d0d0d"
 
 # The user interface setting of category and tag page
 # Choose: index - same as Homepage UI / default - same as archives UI
@@ -791,7 +837,7 @@ mask:
 
 # Loading Animation
 preloader:
-  enable: false
+  enable: true
   # source
   # 1. fullpage-loading
   # 2. pace (progress bar)
@@ -807,13 +853,13 @@ display_mode: light
 
 # Configuration for beautifying the content of the article
 beautify:
-  enable: false
+  enable: true
   # Specify the field to beautify (site or post)
   field: post
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
-  title_prefix_icon:
+  title_prefix_icon: '\f0c1'
   # Specify the color of the title prefix icon, such as '#F47466'
-  title_prefix_icon_color:
+  title_prefix_icon_color: '#F47466'
 
 # Global font settings
 # Don't modify the following settings unless you know how they work
@@ -838,7 +884,7 @@ hr_icon:
 # Typewriter Effect
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false
+  enable: true
   colorful: true
   shake: true
   mobile: false
@@ -860,8 +906,8 @@ canvas_ribbon:
 
 # Fluttering Ribbon
 canvas_fluttering_ribbon:
-  enable: false
-  mobile: false
+  enable: true
+  mobile: true
 
 # canvas_nest
 # https://github.com/hustcc/canvas-nest.js
@@ -879,7 +925,7 @@ canvas_nest:
 
 # Mouse click effects: fireworks
 fireworks:
-  enable: false
+  enable: true
   zIndex: 9999
   mobile: false
 
@@ -907,7 +953,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox:
+lightbox: fancybox
 
 # --------------------------------------
 # Tag Plugins settings
@@ -931,7 +977,7 @@ abcjs:
 # Mermaid
 # https://github.com/mermaid-js/mermaid
 mermaid:
-  enable: false
+  enable: true
   # Write Mermaid diagrams using code blocks
   code_write: false
   # built-in themes: default / forest / dark / neutral
@@ -978,7 +1024,7 @@ note:
 
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   # Exclude the specified pages from pjax, such as '/music/'
   exclude:
     # - /xxxxxx/
@@ -1054,6 +1100,17 @@ inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
+    # Aplayer 音乐播放器配置：
+    - <div class="aplayer no-destroy" 
+      data-id="2875359711" 
+      data-server="netease" 
+      data-type="playlist" 
+      data-fixed="true" 
+      data-mini="true" 
+      data-listFolded="false" 
+      data-order="random" 
+      data-preload="none" 
+      data-autoplay="true" muted></div>
     # - <script src="xxxx"></script>
 
 # CDN Settings
@@ -1128,3 +1185,90 @@ CDN:
     # valine:
     # waline_css:
     # waline_js:
+
+    # main
+    main_css: /css/index.css
+    jquery: https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js
+    main: /js/main.js
+    utils: /js/utils.js
+
+    # pjax
+    pjax: https://cdn.jsdelivr.net/npm/pjax/pjax.min.js
+
+    # comments
+    gitalk: https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js
+    gitalk_css: https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css
+    valine: https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js
+    disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+    disqusjs_css: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+    utterances: https://utteranc.es/client.js
+    twikoo: https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js
+    waline: https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js
+
+    # share
+    addtoany: https://static.addtoany.com/menu/page.js
+    sharejs: https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js
+    sharejs_css: https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css
+
+    # search
+    local_search: /js/search/local-search.js
+    algolia_js: /js/search/algolia.js
+    algolia_search: https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js
+    algolia_search_css: https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css
+
+    # math
+    mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    katex: https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
+    katex_copytex: https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js
+    katex_copytex_css: https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css
+    mermaid: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+
+    # count
+    busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+
+    # background effect
+    canvas_ribbon: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js
+    canvas_fluttering_ribbon: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js
+    canvas_nest: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js
+
+    lazyload: https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js
+    instantpage: https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js
+    typed: https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js
+    pangu: https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js
+
+    # photo
+    fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css
+    fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js
+    medium_zoom: https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js
+
+    # snackbar
+    snackbar_css: https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css
+    snackbar: https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js
+
+    # effect
+    activate_power_mode: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js
+    fireworks: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js
+    click_heart: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js
+    ClickShowText: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js
+
+    # fontawesome
+    fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+
+    # Conversion between Traditional and Simplified Chinese
+    translate: /js/tw_cn.js
+
+    # justifiedGallery
+    justifiedGallery_js: https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js
+    justifiedGallery_css: https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css
+
+    # aplayer
+    aplayer_css: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css
+    aplayer_js: https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js
+    meting_js: https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js
+
+    # Prism.js
+    prismjs_js: https://cdn.jsdelivr.net/npm/prismjs/prism.min.js
+    prismjs_lineNumber_js: https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+    prismjs_autoloader: https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+
+hide_sidebar_menu_child: true
