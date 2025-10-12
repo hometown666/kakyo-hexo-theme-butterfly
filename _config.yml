@@ -518,7 +518,6 @@ search:
 
   # Local Search
   local_search:
-    enable: true
     # Preload the search data when the page loads.
     preload: true
     # Show top n results per article, show all results by setting to -1
