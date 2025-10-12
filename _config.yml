@@ -509,36 +509,38 @@ search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
   use: local_search
-  placeholder: '搜索文章...'
+  placeholder: '搜索文章'
 
-  # Algolia Search
-  algolia_search:
+# Algolia Search
+algolia_search:
+  enable: false
+  # Number of search results per page
+  hitsPerPage: 6
+
+# Docsearch
+# https://docsearch.algolia.com/
+docsearch:
+  appId:
+  apiKey:
+  indexName:
+  option:
+
+# Local Search
+local_search:
+  enable: true
+  # Preload the search data when the page loads.
+  preload: true
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  # Enable pagination for search results
+  pagination:
+    enable: ture
     # Number of search results per page
-    hitsPerPage: 6
-
-  # Local Search
-  local_search:
-    # Preload the search data when the page loads.
-    preload: true
-    # Show top n results per article, show all results by setting to -1
-    top_n_per_article: 1
-    # Unescape html strings to the readable one.
-    unescape: false
-    # Enable pagination for search results
-    pagination:
-      enable: ture
-      # Number of search results per page
-      hitsPerPage: 8
-    CDN:
-      local_search: /js/search/local-search.js
-
-  # Docsearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
+    hitsPerPage: 8
+  CDN:
+    local_search: /js/search/local-search.js
 
 # --------------------------------------
 # Share System
@@ -568,7 +570,7 @@ comments:
   # Leave it empty if you don't need comments
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   # Format of two comments system : Disqus,Waline
-  use: valine
+  use: waline
   # Display the comment name next to the button
   text: true
   # Lazyload: The comment system will be load when comment element enters the browser's viewport.
@@ -611,12 +613,12 @@ gitalk:
 # Valine
 # https://valine.js.org
 valine:
-  appId: iN8E28QYr19Iql1fW8E1pe4m-MdYXbMMI
-  appKey: 524G9dCeP5KxzzxZisWDBvT7
+  appId: 
+  appKey: 
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-  serverURLs:
-  bg:
+  serverURLs: 
+  bg: 
   # Use Valine visitor count as the page view count
   visitor: false
   option:
@@ -632,11 +634,17 @@ valine:
 # Waline - A simple comment system with backend support fork from Valine
 # https://waline.js.org/
 waline:
-  serverURL:
+  enable: true
+  serverURL: https://kakyo-waline.vercel.app
   bg:
   # Use Waline pageview count as the page view count
-  pageview: false
+  pageview: true
   option:
+    meta: [nick, mail, link]
+    pageSize: 10
+    locale:
+      placeholder: 昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！
+    avatar: mm
 
 # Utterances
 # https://utteranc.es/
@@ -952,7 +960,7 @@ clickShowText:
 # https://github.com/francoischalifour/medium-zoom
 # https://fancyapps.com/fancybox/
 # Leave it empty if you don't need lightbox
-lightbox: fancybox
+lightbox: medium_zoom
 
 # --------------------------------------
 # Tag Plugins settings
@@ -1025,6 +1033,7 @@ note:
 pjax:
   enable: true
   # Exclude the specified pages from pjax, such as '/music/'
+  cachebust: false
   exclude:
     # - /xxxxxx/
 
@@ -1098,6 +1107,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <script src = "https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
   bottom:
     # Aplayer 音乐播放器配置：
     - <div class="aplayer no-destroy" 
