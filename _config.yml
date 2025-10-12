@@ -68,7 +68,7 @@ favicon: /media/favicon.png
 
 avatar:
   img: /media/avatar.jpg
-  effect: false
+  effect: ture
 
 # Disable all banner images
 disable_top_img: false
