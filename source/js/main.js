@@ -744,10 +744,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const $table = document.querySelectorAll('#article-container table')
     if (!$table.length) return
 
+    const syncScrollable = wrap => {
+      const scroll = wrap.querySelector(':scope > .table-scroll')
+      if (!scroll) return
+      // bottom cell radius only when no horizontal scrollbar
+      wrap.classList.toggle('is-scrollable', scroll.scrollWidth > scroll.clientWidth + 1)
+    }
+
     $table.forEach(item => {
-      if (!item.closest('.highlight')) {
-        btf.wrap(item, 'div', { class: 'table-wrap' })
-      }
+      if (item.closest('.highlight') || item.closest('.table-wrap')) return
+
+      // outer clips radius; inner scrolls (same nesting as figure.highlight > table)
+      btf.wrap(item, 'div', { class: 'table-scroll' })
+      btf.wrap(item.parentNode, 'div', { class: 'table-wrap' })
+
+      const wrap = item.closest('.table-wrap')
+      syncScrollable(wrap)
+
+      if (typeof ResizeObserver === 'undefined') return
+      const ro = new ResizeObserver(() => syncScrollable(wrap))
+      ro.observe(wrap.querySelector('.table-scroll'))
+      ro.observe(item)
     })
   }
 

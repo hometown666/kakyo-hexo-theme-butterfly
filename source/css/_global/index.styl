@@ -15,12 +15,13 @@
   --tab-button-hover-bg: $tab-button-hover-bg
   --tab-button-active-bg: $tab-button-active-bg
   --card-bg: $card-bg
+  --card-hover-bg: $card-hover-bg
   --card-meta: $theme-meta-color
   --sidebar-bg: $sidebar-background
   --sidebar-menu-bg: $white
   --btn-hover-color: $button-hover-color
   --btn-color: $button-color
-  --btn-bg: $button-bg
+  --btn-bg: rgba($button-bg, .6)
   --text-bg-hover: rgba($text-bg-hover, .7)
   --light-grey: $light-grey
   --dark-grey: $dark-grey
@@ -42,6 +43,7 @@
 // tags plugin
 :root
   --btn-color: $btn-color
+  /* 转移到 kakyo 下，并添加 yellow 配色
   --btn-default-color: $btn-default-color
   --tags-blue-color: $tagsP-blue-color
   --tags-blue-color-lighten: lighten($tagsP-blue-color, 85%)
@@ -55,6 +57,7 @@
   --tags-purple-color-lighten: lighten($tagsP-purple-color, 85%)
   --tags-green-color: $tagsP-green-color
   --tags-green-color-lighten: lighten($tagsP-green-color, 85%)
+  */
   --note-default-border: $note-default-border
   --note-default-bg: $note-default-bg
   --note-default-text: $note-default-text
@@ -162,30 +165,64 @@ h6
 *
   box-sizing: border-box
 
+// like figure.highlight (radius + clip) > table (overflow + scrollbar)
 .table-wrap
-  overflow-x: scroll
   margin: 0 0 20px
+  max-width: 100%
+  width: fit-content
+  overflow-wrap: normal
+  word-break: normal
 
   if hexo-config('rounded_corners_ui')
     $borderRadius = 5px
     border-radius: $borderRadius
+    overflow: hidden
 
     table
-      border-radius: $borderRadius
+      border-top-left-radius: $borderRadius
+      border-top-right-radius: $borderRadius
 
-      thead > tr:first-child
-        th:first-child
+      thead > tr:first-child,
+      & > tr:first-child
+        th:first-child,
+        td:first-child
           border-top-left-radius: $borderRadius
 
-        th:last-child
+        th:last-child,
+        td:last-child
           border-top-right-radius: $borderRadius
 
-      tbody > tr:last-child
+    // no scrollbar: close bottom corners; with scrollbar: wrap clips instead
+    &:not(.is-scrollable) table
+      tbody > tr:last-child,
+      & > tr:last-child
+        th:first-child,
         td:first-child
           border-bottom-left-radius: $borderRadius
 
+        th:last-child,
         td:last-child
           border-bottom-right-radius: $borderRadius
+
+  .table-scroll
+    overflow: auto
+    max-width: 100%
+    -webkit-overflow-scrolling: touch
+
+    // same scrollbar as figure.highlight table / pre[class*='language-']
+    @-moz-document url-prefix()
+      scrollbar-color: var(--hlscrollbar-bg) transparent
+
+    &::-webkit-scrollbar-thumb
+      background: var(--hlscrollbar-bg)
+
+  table
+    width: max-content
+    max-width: none
+
+  th,
+  td
+    white-space: nowrap
 
 table
   display: table

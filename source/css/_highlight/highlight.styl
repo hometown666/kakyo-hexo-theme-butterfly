@@ -6,20 +6,20 @@ wordWrap = $highlight_enable && !$highlight_line_number && hexo-config('code_blo
 
 :root
   --hl-color: $highlight-foreground
-  --hl-bg: $highlight-background
-  --hltools-bg: $highlight-tools.bg-color
+  --hl-bg: alpha($highlight-background, .1)
+  --hltools-bg: alpha($highlight-tools.bg-color, .1) 
   --hltools-color: $highlight-tools.color
-  --hlnumber-bg: $highlight-gutter.bg-color
+  --hlnumber-bg: alpha($highlight-gutter.bg-color, .1)
   --hlnumber-color: $highlight-gutter.color
   --hlscrollbar-bg: $highlight-scrollbar
   --hlexpand-bg: linear-gradient(180deg, rgba($highlight-background, .6), rgba($highlight-background, .9))
 
 [data-theme='dark']
   --hl-color: alpha(#FFFFFF, .7)
-  --hl-bg: lighten(#121212, 2)
-  --hltools-bg: lighten(#121212, 3)
+  --hl-bg: alpha(lighten(#121212, 2), .1)
+  --hltools-bg: alpha(lighten(#121212, 3), .1)
   --hltools-color: #90a4ae
-  --hlnumber-bg: lighten(#121212, 2)
+  --hlnumber-bg: alpha(lighten(#121212, 2), .1)
   --hlnumber-color: alpha(#FFFFFF, .4)
   --hlscrollbar-bg: lighten(#121212, 5)
   --hlexpand-bg: linear-gradient(180deg, rgba(lighten(#121212, 2), .6), rgba(lighten(#121212, 2), .9))

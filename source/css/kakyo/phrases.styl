@@ -1,0 +1,291 @@
+.phrase-item
+  display: contents
+
+.post-content .button-container
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  align-items: flex-start
+
+  .hide-block
+    display: grid
+    grid-template-rows: auto 0fr
+    justify-items: start
+    flex: 0 0 auto
+    width: max-content
+    max-width: 100%
+    margin: 0
+    transition: grid-template-rows 1s cubic-bezier(0.3, 0, 0.15, 1)
+
+    &.expanded
+      grid-template-rows: auto 1fr
+      flex: 1 0 100%
+      width: 100%
+
+    &.collapsing
+      flex: 1 0 100%
+      width: 100%
+
+  .hide-button
+    position: relative
+    z-index: 1
+    grid-row: 1
+    justify-self: start
+    width: auto
+    max-width: 100%
+    height: auto
+    min-height: 36px
+    padding: 7px 22px 7px 18px
+    border: 1px solid rgba(255, 255, 255, 0.28)
+    border-radius: 999px
+    background: var(--phrase-btn-bg, linear-gradient(135deg, #667eea 0%, #764ba2 100%))
+    background-size: 200% 200%
+    background-position: 0% 50%
+    color: #fff
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18)
+    box-shadow: 0 4px 16px var(--phrase-glow, rgba(102, 126, 234, 0.35)), inset 0 1px 0 rgba(255, 255, 255, 0.35)
+    cursor: pointer
+    overflow: hidden
+    transition: transform 0.35s cubic-bezier(0.3, 0, 0.15, 1), background-position 0.6s ease
+
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.28) 50%, transparent 62%)
+      transform: translateX(-120%)
+      transition: transform 0.65s cubic-bezier(0.3, 0, 0.15, 1)
+      pointer-events: none
+
+    &::after
+      content: ''
+      position: absolute
+      top: 6px
+      right: 10px
+      width: 5px
+      height: 5px
+      border-radius: 50%
+      background: rgba(255, 255, 255, 0.75)
+      box-shadow: 0 0 6px rgba(255, 255, 255, 0.55)
+      opacity: 0.85
+      pointer-events: none
+
+    &:hover
+      transform: translateY(-2px)
+      background-position: 100% 50%
+      box-shadow: 0 8px 22px var(--phrase-glow, rgba(102, 126, 234, 0.42)), inset 0 1px 0 rgba(255, 255, 255, 0.4)
+      transition: transform 0.35s cubic-bezier(0.3, 0, 0.15, 1), box-shadow 0.35s cubic-bezier(0.3, 0, 0.15, 1), background-position 0.6s ease
+
+      &::before
+        transform: translateX(120%)
+
+    .phrase-btn-text
+      position: relative
+      z-index: 1
+      font-size: 20px
+      font-weight: 400
+
+  .hide-block.expanded > .hide-button
+    border-radius: 14px 14px 4px 14px
+    box-shadow: 0 6px 20px var(--phrase-glow, rgba(102, 126, 234, 0.38)), inset 0 1px 0 rgba(255, 255, 255, 0.38)
+
+  word
+    font-weight: 700
+
+  .hide-block > .hide-content
+    display: block
+    grid-row: 2
+    justify-self: stretch
+    width: 100%
+    overflow: hidden
+    min-height: 0
+    min-width: 0
+    opacity: 0
+    visibility: hidden
+    padding: 0
+    margin-top: 0
+    transition: padding 1s cubic-bezier(0.3, 0, 0.15, 1), opacity 0.55s cubic-bezier(0.3, 0, 0.15, 1), visibility 0s linear 0.55s
+
+  .hide-block.expanded > .hide-content
+    position: relative
+    opacity: 1
+    visibility: visible
+    margin-top: -2px
+    padding: 18px 22px 20px 26px
+    border-radius: 4px 16px 16px 16px
+    background: linear-gradient(145deg, var(--phrase-panel-tint, rgba(102, 126, 234, 0.07)) 0%, rgba(255, 255, 255, 0) 55%), var(--card-bg, #fff)
+    border: 1px solid var(--phrase-panel-border, rgba(102, 126, 234, 0.16))
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.65)
+    transition: padding 1s cubic-bezier(0.3, 0, 0.15, 1), opacity 0.55s cubic-bezier(0.3, 0, 0.15, 1) 0.12s, visibility 0s linear 0s
+
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 12px
+      bottom: 12px
+      width: 3px
+      border-radius: 0 3px 3px 0
+      background: var(--phrase-accent, #764ba2)
+      box-shadow: 0 0 12px var(--phrase-glow, rgba(118, 75, 162, 0.45))
+
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 120px
+      height: 120px
+      background: radial-gradient(circle at top right, var(--phrase-panel-tint, rgba(102, 126, 234, 0.12)) 0%, transparent 70%)
+      pointer-events: none
+
+  li
+    font-size: 17px
+    overflow-wrap: anywhere
+    word-break: break-word
+
+  .chinese-translation-text
+    display: block
+    width: 100%
+    max-width: 100%
+    min-width: 0
+    margin-top: 4px
+    box-sizing: border-box
+    font-size: 15px
+
+  .chinese-translation-meta
+    display: flex
+    flex-wrap: wrap
+    align-items: baseline
+    justify-content: space-between
+    gap: 2px 10px
+    width: 100%
+    max-width: 100%
+    min-width: 0
+
+  .chinese-text
+    flex: 1 1 auto
+    min-width: 0
+
+  .instance-source
+    flex: 0 1 auto
+    margin-left: auto
+    color: #666666
+    font-style: italic
+    font-size: 14px
+    text-align: right
+    white-space: normal
+    word-break: break-word
+    overflow-wrap: anywhere
+    max-width: 100%
+    min-width: 0
+
+  // gradient color schemes
+  for n in 1 2 3 4 5 6 7 8 9 10 11 12
+    .hide-block[data-phrase-scheme=\"{n}\"]
+      --phrase-btn-bg: s('var(--phrase-%s-bg)', n)
+      --phrase-accent: s('var(--phrase-%s-to)', n)
+      --phrase-glow: s('var(--phrase-%s-glow)', n)
+      --phrase-panel-tint: s('var(--phrase-%s-tint)', n)
+      --phrase-panel-border: s('var(--phrase-%s-border)', n)
+
+.hideBlockTitle
+  font-size: 30px
+  font-weight: bold
+  margin: 0 20px 0
+  white-space: nowrap
+
+.sb-sth
+  margin: 0 10px
+  color: grey
+  font-size: 20px
+
+.definition-text
+  font-size: 17px
+  margin: 0 0 0 40px
+  white-space: normal
+  display: inline-block
+  max-width: 100%
+
+.definition-english-text
+  margin: 0 0 0 20px
+  display: inline-block
+
+:root
+  --phrase-1-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+  --phrase-1-to: #764ba2
+  --phrase-1-glow: rgba(118, 75, 162, 0.38)
+  --phrase-1-tint: rgba(102, 126, 234, 0.09)
+  --phrase-1-border: rgba(118, 75, 162, 0.18)
+
+  --phrase-2-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)
+  --phrase-2-to: #f5576c
+  --phrase-2-glow: rgba(245, 87, 108, 0.38)
+  --phrase-2-tint: rgba(240, 147, 251, 0.1)
+  --phrase-2-border: rgba(245, 87, 108, 0.18)
+
+  --phrase-3-bg: linear-gradient(135deg, #4facfe 0%, #00c6fb 100%)
+  --phrase-3-to: #00c6fb
+  --phrase-3-glow: rgba(0, 198, 251, 0.38)
+  --phrase-3-tint: rgba(79, 172, 254, 0.09)
+  --phrase-3-border: rgba(0, 198, 251, 0.18)
+
+  --phrase-4-bg: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)
+  --phrase-4-to: #38f9d7
+  --phrase-4-glow: rgba(56, 249, 215, 0.32)
+  --phrase-4-tint: rgba(67, 233, 123, 0.09)
+  --phrase-4-border: rgba(56, 249, 215, 0.18)
+
+  --phrase-5-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
+  --phrase-5-to: #fee140
+  --phrase-5-glow: rgba(250, 112, 154, 0.35)
+  --phrase-5-tint: rgba(250, 112, 154, 0.1)
+  --phrase-5-border: rgba(254, 225, 64, 0.22)
+
+  --phrase-6-bg: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)
+  --phrase-6-to: #fbc2eb
+  --phrase-6-glow: rgba(161, 140, 209, 0.38)
+  --phrase-6-tint: rgba(251, 194, 235, 0.12)
+  --phrase-6-border: rgba(161, 140, 209, 0.2)
+
+  --phrase-7-bg: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%)
+  --phrase-7-to: #ff7eb3
+  --phrase-7-glow: rgba(255, 117, 140, 0.38)
+  --phrase-7-tint: rgba(255, 126, 179, 0.1)
+  --phrase-7-border: rgba(255, 117, 140, 0.18)
+
+  --phrase-8-bg: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)
+  --phrase-8-to: #66a6ff
+  --phrase-8-glow: rgba(102, 166, 255, 0.38)
+  --phrase-8-tint: rgba(137, 247, 254, 0.1)
+  --phrase-8-border: rgba(102, 166, 255, 0.18)
+
+  --phrase-9-bg: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)
+  --phrase-9-to: #ff6a88
+  --phrase-9-glow: rgba(255, 106, 136, 0.38)
+  --phrase-9-tint: rgba(255, 154, 86, 0.1)
+  --phrase-9-border: rgba(255, 106, 136, 0.18)
+
+  --phrase-10-bg: linear-gradient(135deg, #4568dc 0%, #b06ab3 100%)
+  --phrase-10-to: #b06ab3
+  --phrase-10-glow: rgba(69, 104, 220, 0.38)
+  --phrase-10-tint: rgba(176, 106, 179, 0.09)
+  --phrase-10-border: rgba(69, 104, 220, 0.18)
+
+  --phrase-11-bg: linear-gradient(135deg, #0093e9 0%, #80d0c7 100%)
+  --phrase-11-to: #80d0c7
+  --phrase-11-glow: rgba(0, 147, 233, 0.35)
+  --phrase-11-tint: rgba(128, 208, 199, 0.1)
+  --phrase-11-border: rgba(0, 147, 233, 0.18)
+
+  --phrase-12-bg: linear-gradient(135deg, #8e2de2 0%, #4a00e0 100%)
+  --phrase-12-to: #4a00e0
+  --phrase-12-glow: rgba(142, 45, 226, 0.4)
+  --phrase-12-tint: rgba(142, 45, 226, 0.08)
+  --phrase-12-border: rgba(74, 0, 224, 0.2)
+
+[data-theme='dark'] .post-content .button-container
+  .hide-block.expanded > .hide-content
+    background: linear-gradient(145deg, var(--phrase-panel-tint, rgba(102, 126, 234, 0.12)) 0%, rgba(0, 0, 0, 0) 55%), var(--card-bg)
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06)

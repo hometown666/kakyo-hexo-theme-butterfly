@@ -64,7 +64,7 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /media/favicon.png
+favicon: /media/favicon.min.png
 
 avatar:
   img: /media/avatar.jpg
@@ -74,36 +74,36 @@ avatar:
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /media/top_img.jpg
+default_top_img: /media/top_img.webp
 
 # The banner image of index page
-index_img: /media/bg.jpg
+index_img: /media/bg.webp
 
 # The banner image of archive page
-archive_img: 'linear-gradient(20deg, #0062be, #925696, #cc426e, #fb0347)'
+archive_img: /media/archive.webp
 
 # Note: tag page, not tags page
-tag_img: 'linear-gradient( 135deg, #F05F57 10%, #360940 100%)'
+tag_img: /media/tag.webp
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
 #  - tag name: xxxxx
-tag_per_img:
+tag_per_img: 
 
 # Note: category page, not categories page
-category_img:
+category_img: 
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: 
 
 # The background image of footer
-footer_img: false
+footer_img: 'linear-gradient(rgba(0, 0, 0, 0), #00BFFFe6)'
 
 # Website Background
 # Can set it to color or image url
-background:
+background: /media/website_bg.webp
 
 cover:
   # Disable the cover or not
@@ -124,7 +124,7 @@ error_img:
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: /media/page404.gif
+  background: /media/page404.webp
 
 post_meta:
   # Home Page
@@ -177,28 +177,8 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - 欢迎来到家乡的~~世界~~天下
+    - 欢迎来到家乡的世界
     - Welcome to hometown's world.
-    - 鸡汤来咯
-    - Here comes some motivational quotes (chicken soup).
-    - 知识来自实践。
-    - Knowledge comes from experience alone.
-    - 世间无所谓天才，它仅是刻苦加勤奋。
-    - There is no such thing as genius; it is nothing but labour and diligence.
-    - 为什么家长只看分数？废话！难道他们看得懂题目？
-    - Why do parents only care about scores? Duh! Can they even understand the questions?
-    - 厉害的人太多了，我要为笨蛋争口气！
-    - There are too many talented people, I want to stand up for the dumb ones!
-    - 书籍是进步的阶梯，手机是近视的电梯。
-    - Books are the staircase to progress, while phones are the elevator to myopia.
-    - 这个月圣诞，下个月元旦，下下月完蛋。
-    - This month is Christmas, next month is New Year’s Day, and the month after next is doomed.
-    - 当你觉得自己不行的时候，走到斑马线上，你就成了一个行人。
-    - When you feel like you can’t do it, just step onto the zebra crossing and you become a pedestrian.
-    - 上学时一个人的力气如壮牛，那是因为他，拖了全班人的后腿。
-    - When you were in school, your strength was akin to that of a strong bull. This is because you were busy pulling the rest of the class along.
-    - 牛人坚持不懈叫匠人，但你坚持不懈叫犟人。
-    - A genius who persists is called a master craftsman, but if you persist stubbornly, you’re called stubborn.
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -216,7 +196,7 @@ index_layout: 3
 # 3: auto_excerpt (default)
 # false: do not show the article introduction
 index_post_content:
-  method: 3
+  method: 2
   # If you set method to 2 or 3, the length need to config
   length: 500
 
@@ -488,7 +468,7 @@ math:
   # Choose: mathjax, katex
   # Leave it empty if you don't need math
   use: mathjax
-  per_page: true
+  per_page: false
   hide_scrollbar: false
 
   mathjax:
@@ -639,12 +619,17 @@ waline:
   bg:
   # Use Waline pageview count as the page view count
   pageview: true
+  emojiCDN:
+    - https://valinecdn.bili33.top/Menhera-chan
+    - https://valinecdn.bili33.top/HONKAI3-Daily
+    - https://unpkg.com/@waline/emojis@1.2.0/soul-emoji
   option:
     meta: [nick, mail, link]
     pageSize: 10
     locale:
-      placeholder: 昵称和邮箱为必填项，为了您能及时收到相关回复的邮件通知，请确保邮箱的正确性！
+      placeholder: 啊吧啊吧！Nickname填写QQ号可以自动获取QQ昵称和QQ头像哦~
     avatar: mm
+    emoji: true
 
 # Utterances
 # https://utteranc.es/
@@ -934,7 +919,7 @@ canvas_nest:
 fireworks:
   enable: true
   zIndex: 9999
-  mobile: false
+  mobile: true
 
 # Mouse click effects: Heart symbol
 click_heart:
@@ -1039,7 +1024,7 @@ pjax:
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar - Toast Notification
@@ -1059,13 +1044,13 @@ instantpage: false
 # Lazyload
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   # Use browser's native lazyload instead of vanilla-lazyload
   native: false
   # Specify the field to use lazyload (site or post)
   field: site
   placeholder:
-  blur: false
+  blur: true
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline
@@ -1121,6 +1106,9 @@ inject:
       data-preload="none" 
       data-autoplay="true" muted></div>
     # - <script src="xxxx"></script>
+    - <script src = "/js/kakyo/random-hideBlock-bg.js"></script>
+    - <script src = "/js/kakyo/instance-source-floatright.js"></script>
+    - <script src = "/js/kakyo/block-button-transition.js"></script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
@@ -1233,7 +1221,7 @@ CDN:
     mermaid: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
 
     # count
-    busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+    busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
     # background effect
     canvas_ribbon: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js
@@ -1261,7 +1249,7 @@ CDN:
     ClickShowText: https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js
 
     # fontawesome
-    fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
+    #fontawesome: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css
 
     # Conversion between Traditional and Simplified Chinese
     translate: /js/tw_cn.js
