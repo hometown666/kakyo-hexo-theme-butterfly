@@ -64,26 +64,26 @@ social:
 # Image Settings
 # --------------------------------------
 
-favicon: /media/favicon.min.png
+favicon: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/favicon.min.png
 
 avatar:
-  img: /media/avatar.jpg
+  img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/avatar.jpg
   effect: ture
 
 # Disable all banner images
 disable_top_img: false
 
 # If the banner of page not setting, it will show the default_top_img
-default_top_img: /media/top_img.webp
+default_top_img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/top_img.webp
 
 # The banner image of index page
-index_img: /media/bg.webp
+index_img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/bg.webp
 
 # The banner image of archive page
-archive_img: /media/archive.webp
+archive_img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/archive.webp
 
 # Note: tag page, not tags page
-tag_img: /media/tag.webp
+tag_img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/tag.webp
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
@@ -103,7 +103,7 @@ footer_img: 'linear-gradient(rgba(0, 0, 0, 0), #00BFFFe6)'
 
 # Website Background
 # Can set it to color or image url
-background: /media/website_bg.webp
+background: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/website_bg.webp
 
 cover:
   # Disable the cover or not
@@ -117,14 +117,14 @@ cover:
 
 # Replace Broken Images
 error_img:
-  flink: /media/top_img.jpg
-  post_page: /media/top_img.jpg
+  flink: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/top_img.jpg
+  post_page: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/top_img.jpg
 
 # A simple 404 page
 error_404:
   enable: true
   subtitle: 'Page Not Found'
-  background: /media/page404.webp
+  background: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/page404.webp
 
 post_meta:
   # Home Page
@@ -226,10 +226,10 @@ reward:
   enable: true
   text:
   QR_code:
-    - img: /media/wechat.jpg
+    - img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/wechat.jpg
       link:
       text: wechat
-    - img: /media/alipay.jpg
+    - img: https://cdn.jsdelivr.net/gh/hometown666/kakyo-hexo-theme-butterfly@main/source/media/alipay.jpg
       link:
       text: alipay
 
